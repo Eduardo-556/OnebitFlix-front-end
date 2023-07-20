@@ -19,7 +19,7 @@ const PresetationSection = function () {
               Estude de onde estiver a qualquer momento e continue <br />
               evoluindo como programador.
             </p>
-            <Link href="/register">
+            <Link href="/register" className="text-decoration-none">
               <Button className={styles.btnCta} outline>
                 ACESSE AGORA
                 <img
