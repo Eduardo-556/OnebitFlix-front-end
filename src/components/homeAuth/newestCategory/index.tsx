@@ -7,7 +7,12 @@ const NewestCategory = function () {
   const { data, error } = useSWR("/neweste", courseService.getNewestCourses);
 
   if (error) return error;
-  if (!data) return <> Loading...</>;
+  if (!data)
+    return (
+      <>
+        <p>Loading...</p>
+      </>
+    );
   return (
     <>
       <p className={styles.titleCategory}>LANÇAMENTOS</p>
