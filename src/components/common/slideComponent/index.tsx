@@ -2,7 +2,7 @@ import { CourseType } from "@/src/services/courseService";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
 import SlideCard from "../slideCard";
-
+import React from "react";
 interface props {
   course: CourseType[];
 }
@@ -21,9 +21,9 @@ const SlideComponent = function ({ course }: props) {
         <Splide
           options={{
             type: "loop",
-            perPage: 4,
+            perPage: slideCount,
             perMove: 1,
-            width: slideCount * 300,
+            width: course.length < 4 ? slideCount * 300 : 1200,
             pagination: false,
             arrows: course.length > 4 ? true : false,
             drag: course.length > 4 ? true : false,
