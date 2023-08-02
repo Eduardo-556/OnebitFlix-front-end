@@ -20,6 +20,7 @@ const HomeAuth = function () {
         <FavoritesCourses />
         <FeaturedCategory />
         <ListCategories />
+        <Footer />
       </main>
     </>
   );
