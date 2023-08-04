@@ -1,14 +1,23 @@
 import { Container, Form, Input } from "reactstrap";
 import styles from "./styles.module.scss";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "react-modal";
 import { symlink } from "fs";
 import { useRouter } from "next/router";
+import profileService from "@/src/services/profileService";
 
 Modal.setAppElement("#__next");
 
 const HeaderAuth = function () {
+  const [initials, setInitials] = useState("");
+  useEffect(() => {
+    profileService.fetchCurrent().then((user) => {
+      const firstNameInitial = user.firstName.slice(0, 1);
+      const lastNameInitial = user.lastName.slice(0, 1);
+      setInitials(firstNameInitial + lastNameInitial);
+    });
+  }, []);
   const router = useRouter();
   const handleLogout = () => {
     sessionStorage.clear();
@@ -48,7 +57,7 @@ const HeaderAuth = function () {
             className={styles.searchImg}
           />
           <p className={styles.userProfile} onClick={handleOpenModal}>
-            AB
+            {initials}
           </p>
         </div>
         <Modal
