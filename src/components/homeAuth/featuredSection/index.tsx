@@ -13,7 +13,6 @@ const FeaturedSection = function () {
   if (!data) {
     return <PageSpinner />;
   }
-
   return (
     <>
       {
