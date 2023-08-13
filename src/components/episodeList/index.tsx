@@ -24,7 +24,11 @@ function handleSecondsToMin(totalSeconds: number) {
 const EpisodeList = function ({ episode, course }: props) {
   const router = useRouter();
   const handleEpisodePlayer = () => {
-    router.push(`/courses/episode/${episode.order - 1}?courseid=${course.id}`);
+    router.push(
+      `/courses/episode/${episode.order - 1}?courseid=${course.id}&episodeid=${
+        episode.id
+      }`
+    );
   };
   return (
     <>
