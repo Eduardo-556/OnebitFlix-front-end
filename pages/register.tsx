@@ -7,6 +7,7 @@ import { FormEvent, use, useEffect, useState } from "react";
 import authService from "@/src/services/authService";
 import { useRouter } from "next/router";
 import ToastComponent from "@/src/components/common/toast";
+import Script from "next/script";
 
 const Register = function () {
   const router = useRouter();
@@ -57,7 +58,6 @@ const Register = function () {
       <Head>
         <title>Onebitflix - Registro</title>
         <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
-        <script src="https://jsuites.net/v4/jsuites.js"></script>
       </Head>
       <main className={styles.main}>
         <HeaderGeneric
@@ -182,6 +182,7 @@ const Register = function () {
           isOpen={toastIsOpen}
           message={toastMessage}
         />
+        <Script src="https://jsuites.net/v4/jsuites.js"></Script>
       </main>
     </>
   );
